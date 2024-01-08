@@ -1,4 +1,4 @@
-""Bot Help Grup""
+Bot Help Grup
 
 Bot Ini Akan Membantu Kalian Di Grup,
 
