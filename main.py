@@ -1,9 +1,8 @@
-import os
 import telebot
 from datetime import datetime, timedelta
 
-# Buat bot Telegram
-bot = telebot.TeleBot(os.environ.get("BOT_TOKEN"))
+# Masukkan token bot Telegram langsung
+bot = telebot.TeleBot("TOKEN_BOT")
 
 # Fungsi untuk menghapus pesan yang tidak pantas
 def delete_message(message):
@@ -42,12 +41,12 @@ def welcome_new_member(message):
     if message.new_chat_members:
         # Ambil username anggota baru
         new_members = [member.username for member in message.new_chat_members if member.username is not None]
-        
+
         # Jika ada username yang ditemukan
         if new_members:
             # Gabungkan username menjadi satu string dengan pemisah koma
             usernames = ', '.join(new_members)
-            
+
             # Kirim pesan selamat datang dengan menyebutkan username
             bot.send_message(message.chat.id, "Selamat datang di grup ini, {}".format(usernames))
         else:
